@@ -1,0 +1,1 @@
+{"name":"aiden","version":"1.0.0","type":"module","description":"Advanced Intelligence Defense & Execution Nexus","main":"src/aiden/server.js","scripts":{"start":"node src/aiden/server.js","dev":"nodemon src/aiden/server.js"},"dependencies":{"cors":"^2.8.5","dotenv":"^16.0.3","express":"^4.18.2"},"devDependencies":{"nodemon":"^3.1.9"}}
