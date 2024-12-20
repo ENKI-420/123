@@ -19,16 +19,20 @@ app.use(helmet());
 app.use(
 helmet.contentSecurityPolicy({
     directives: {
-    defaultSrc: ["'self'"],
-    scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
-    styleSrc: ["'self'", "'unsafe-inline'"],
-    imgSrc: ["'self'", "data:", "https:"],
-    connectSrc: ["'self'", "https://chatgpt.com"],
-    fontSrc: ["'self'"],
-    objectSrc: ["'none'"],
-    mediaSrc: ["'self'"],
-    frameSrc: ["'self'", "https://chatgpt.com"]
-    }
+        defaultSrc: ["'self'", "https:"],
+        scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https:", "blob:"],
+        styleSrc: ["'self'", "'unsafe-inline'", "https:"],
+        imgSrc: ["'self'", "data:", "https:", "http:", "blob:"],
+        connectSrc: ["'self'", "https:", "wss:", "ws:"],
+        fontSrc: ["'self'", "https:", "data:"],
+        objectSrc: ["'none'"],
+        mediaSrc: ["'self'", "https:"],
+        frameSrc: ["'self'", "https:"],
+        workerSrc: ["'self'", "blob:"],
+        manifestSrc: ["'self'"],
+        baseUri: ["'self'"]
+    },
+    reportOnly: false
 })
 );
 
