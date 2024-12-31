@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark" class="defense-portal">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AGILE DEFENSE SYSTEMS Research Dashboard - Advanced Defense Research and Development">
+    <meta name="description" content="AGILE DEFENSE SYSTEMS Research Dashboard - Advanced Defense Research and Development">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <meta name="classification" content="TOP SECRET//SCI//NOFORN">
+    <meta name="security-level" content="TS/SCI">
+    <meta name="handling-instructions" content="SPECIAL ACCESS REQUIRED">
+    <title>AGILE DEFENSE SYSTEMS - Secure Defense Solutions</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' https: 'unsafe-inline' 'unsafe-eval'; style-src 'self' https: 'unsafe-inline';">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css" rel="stylesheet">
+    <link href="/static/css/styles.css" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Additional JS Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <title>AIDEN - Tedd's Adaptive Interface Digital Enhancement Node</title>
+    <link rel="icon" type="image/png" href="/static/images/favicon.png">
+    <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="/static/css/styles.css" rel="stylesheet">
+<body>
+<!-- Security Classification Banner -->
+<div class="classification-banner top">
+    <div class="classification-text">TOP SECRET//SCI//NOFORN</div>
+    <div class="classification-warning">CLASSIFIED INFORMATION - Authorized Access Only</div>
+    <div class="access-level">Access Level: TS/SCI - Special Access Required</div>
+</div>
+<div class="classification-banner bottom">
+    <div class="classification-text">TOP SECRET//SCI//NOFORN</div>
+</div>
+
+<!-- Defense Research Dashboard -->
+<div class="container-fluid h-100">
+    <div class="security-status">
+        <div class="badge badge-danger">Classification: TOP SECRET</div>
+        <div class="badge badge-warning">Clearance Required: TS/SCI</div>
+        <div class="badge badge-info">Project Status: ACTIVE</div>
+    </div>
+    <div class="row h-100">
+            <!-- Chat Interface -->
+            <div class="col-md-8 col-lg-9 h-100 d-flex flex-column">
+                <div class="chat-header p-3 d-flex align-items-center">
+                    <div class="avatar-container me-3">
+                        <img id="aidenAvatar" src="" alt="AIDEN Avatar" class="rounded-circle" width="64" height="64">
+                    </div>
+                    <div>
+                        <h2>AIDEN - Jake's Digital Enlightenment</h2>
+                        <p class="text-muted">Your Partner in Creative Actualization & Digital Innovation</p>
+                    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" role="main">
+                        <!-- Global Search -->
+                        <div class="search-container my-3">
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-search"></i></span>
+                                <input type="search" class="form-control" placeholder="Search projects, documents, or research data..." 
+                                        aria-label="Global search" id="globalSearch">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                    Filters
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#" data-filter="projects">Projects</a></li>
+                                    <li><a class="dropdown-item" href="#" data-filter="documents">Documents</a></li>
+                                    <li><a class="dropdown-item" href="#" data-filter="research">Research Data</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Notification System -->
+                        <div class="toast-container position-fixed top-0 end-0 p-3">
+                            <div id="notificationToast" class="toast" role="alert" aria-live="polite" aria-atomic="true">
+                                <div class="toast-header">
+                                    <i class="bi bi-bell-fill me-2"></i>
+                                    <strong class="me-auto">Notification</strong>
+                                    <small>just now</small>
+                                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                </div>
+                                <div class="toast-body">
+                                    <!-- Notification content will be inserted here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Defense Research Status Panel -->
+                        <div class="defense-status-panel mb-4">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="status-card">
+                                        <h5>Security Level</h5>
+                                        <div class="security-indicator level-ts">TS/SCI</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="status-card">
+                                        <h5>Compliance Status</h5>
+                                        <div class="compliance-indicator compliant">COMPLIANT</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="status-card">
+                                        <h5>Active Projects</h5>
+                                        <div class="project-counter">12</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="status-card">
+                                        <h5>Research Phase</h5>
+                                        <div class="phase-indicator phase-beta">BETA</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1>AGILE DEFENSE SYSTEMS Research Hub</h1>
+                <div class="chat-messages flex-grow-1 p-3" id="messageContainer">
+                    <!-- Messages will be inserted here by JavaScript -->
+                </div>
+
+                <div class="chat-input p-3">
+                    <div id="errorAlert" class="alert alert-danger d-none" role="alert"></div>
+                    <div id="typingIndicator" class="typing-indicator d-none">
+                        <span>AIDEN is typing</span>
+                        <div class="dots"><span>.</span><span>.</span><span>.</span></div>
+                    </div>
+                    <form id="messageForm" class="d-flex gap-2">
+                        <input type="text" 
+                            class="form-control" 
+                            id="messageInput" 
+                            placeholder="Share your ideas, ambitions, or ask for guidance..." 
+                            aria-label="Message input"
+                            autocomplete="off">
+                        <button type="submit" class="btn btn-primary" aria-label="Send message">
+                            <span class="button-text">Send</span>
+                            <div class="spinner-border spinner-border-sm d-none" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="col-md-4 col-lg-3 bg-dark p-3 hotkey-sidebar">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4>Partnership Tools</h4>
+                    <button id="themeToggle" class="btn btn-outline-secondary btn-sm" aria-label="Toggle theme">
+                        <i class="theme-icon"></i>
+                    </button>
+                </div>
+                <div class="list-group">
+                    <div class="list-group-item">
+                        <strong>I</strong> - Idea Vault
+                    </div>
+                    <div class="list-group-item">
+                        <strong>P</strong> - Project Planning
+                    </div>
+                    <div class="list-group-item">
+                        <strong>R</strong> - Resource Finder
+                    </div>
+                    <div class="list-group-item">
+                        <strong>M</strong> - Motivation Boost
+                    </div>
+                    <div class="list-group-item">
+                        <strong>C</strong> - Adaptive Integrated Diverse Enhancement Node 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="/static/js/aidenIntegration.js"></script>
+    <script src="/static/js/chat.js"></script>
+</body>
+</html>
