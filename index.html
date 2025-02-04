@@ -1,184 +1,1938 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark" class="defense-portal">
+<html lang="en" data-bs-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AGILE DEFENSE SYSTEMS Research Dashboard - Advanced Defense Research and Development">
-    <meta name="description" content="AGILE DEFENSE SYSTEMS Research Dashboard - Advanced Defense Research and Development">
-    <meta name="csrf-token" content="{{ csrf_token }}">
-    <meta name="classification" content="TOP SECRET//SCI//NOFORN">
-    <meta name="security-level" content="TS/SCI">
-    <meta name="handling-instructions" content="SPECIAL ACCESS REQUIRED">
-    <title>AGILE DEFENSE SYSTEMS - Secure Defense Solutions</title>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' https: 'unsafe-inline' 'unsafe-eval'; style-src 'self' https: 'unsafe-inline';">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css" rel="stylesheet">
-    <link href="/static/css/styles.css" rel="stylesheet">
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Additional JS Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
-    <title>AIDEN - Tedd's Adaptive Interface Digital Enhancement Node</title>
-    <link rel="icon" type="image/png" href="/static/images/favicon.png">
-    <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
-    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <link href="/static/css/styles.css" rel="stylesheet">
+    <meta name="description" content="Agile Defense Systems research hub featuring cutting-edge defense technologies and advancements in weaponry, propulsion, and archaeology.">
+    <meta name="keywords" content="Agile Defense, Research, Weaponry, Propulsion, Metallurgy, Archaeology, Defense Technologies">
+    <meta name="author" content="Agile Defense Systems">
+    <title>AIDEN - Digital Enlightenment Dashboard</title>
+
+    <!-- Minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm/css/xterm.css">
+
+    <style>
+        body {
+            background-color: #2A2A2A;
+            color: #EDEDED;
+        }
+
+        .sidebar {
+            background-color: #1F1F1F;
+        }
+
+        .sidebar .nav-link {
+            color: #B0B0B0;
+        }
+
+        .sidebar .nav-link.active {
+            color: #3DB8E7;
+            font-weight: bold;
+        }
+
+        .dark-mode {
+            background-color: #2A2A2A;
+            color: #EDEDED;
+        }
+
+        .light-mode {
+            background-color: #FFFFFF;
+            color: #333333;
+        }
+    </style>
+</head>
+
 <body>
-<!-- Security Classification Banner -->
-<div class="classification-banner top">
-    <div class="classification-text">TOP SECRET//SCI//NOFORN</div>
-    <div class="classification-warning">CLASSIFIED INFORMATION - Authorized Access Only</div>
-    <div class="access-level">Access Level: TS/SCI - Special Access Required</div>
-</div>
-<div class="classification-banner bottom">
-    <div class="classification-text">TOP SECRET//SCI//NOFORN</div>
-</div>
-
-<!-- Defense Research Dashboard -->
-<div class="container-fluid h-100">
-    <div class="security-status">
-        <div class="badge badge-danger">Classification: TOP SECRET</div>
-        <div class="badge badge-warning">Clearance Required: TS/SCI</div>
-        <div class="badge badge-info">Project Status: ACTIVE</div>
-    </div>
-    <div class="row h-100">
-            <!-- Chat Interface -->
-            <div class="col-md-8 col-lg-9 h-100 d-flex flex-column">
-                <div class="chat-header p-3 d-flex align-items-center">
-                    <div class="avatar-container me-3">
-                        <img id="aidenAvatar" src="" alt="AIDEN Avatar" class="rounded-circle" width="64" height="64">
-                    </div>
-                    <div>
-                        <h2>AIDEN - Jake's Digital Enlightenment</h2>
-                        <p class="text-muted">Your Partner in Creative Actualization & Digital Innovation</p>
-                    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" role="main">
-                        <!-- Global Search -->
-                        <div class="search-container my-3">
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-search"></i></span>
-                                <input type="search" class="form-control" placeholder="Search projects, documents, or research data..." 
-                                        aria-label="Global search" id="globalSearch">
-                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                    Filters
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#" data-filter="projects">Projects</a></li>
-                                    <li><a class="dropdown-item" href="#" data-filter="documents">Documents</a></li>
-                                    <li><a class="dropdown-item" href="#" data-filter="research">Research Data</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Notification System -->
-                        <div class="toast-container position-fixed top-0 end-0 p-3">
-                            <div id="notificationToast" class="toast" role="alert" aria-live="polite" aria-atomic="true">
-                                <div class="toast-header">
-                                    <i class="bi bi-bell-fill me-2"></i>
-                                    <strong class="me-auto">Notification</strong>
-                                    <small>just now</small>
-                                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                                </div>
-                                <div class="toast-body">
-                                    <!-- Notification content will be inserted here -->
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Defense Research Status Panel -->
-                        <div class="defense-status-panel mb-4">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="status-card">
-                                        <h5>Security Level</h5>
-                                        <div class="security-indicator level-ts">TS/SCI</div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="status-card">
-                                        <h5>Compliance Status</h5>
-                                        <div class="compliance-indicator compliant">COMPLIANT</div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="status-card">
-                                        <h5>Active Projects</h5>
-                                        <div class="project-counter">12</div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="status-card">
-                                        <h5>Research Phase</h5>
-                                        <div class="phase-indicator phase-beta">BETA</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                            <h1>AGILE DEFENSE SYSTEMS Research Hub</h1>
-                <div class="chat-messages flex-grow-1 p-3" id="messageContainer">
-                    <!-- Messages will be inserted here by JavaScript -->
+    <div class="d-flex">
+        <!-- Left Sidebar -->
+        <nav class="sidebar bg-dark flex-shrink-0 p-3" style="width: 280px; height: 100vh;">
+            <h5>Active Models</h5>
+            <div class="mb-3">
+                <div class="form-check form-switch">
+                    <input class="form-check-input model-toggle" type="checkbox" id="aidenToggle" value="aiden">
+                    <label class="form-check-label" for="aidenToggle">AIDEN</label>
                 </div>
-
-                <div class="chat-input p-3">
-                    <div id="errorAlert" class="alert alert-danger d-none" role="alert"></div>
-                    <div id="typingIndicator" class="typing-indicator d-none">
-                        <span>AIDEN is typing</span>
-                        <div class="dots"><span>.</span><span>.</span><span>.</span></div>
-                    </div>
-                    <form id="messageForm" class="d-flex gap-2">
-                        <input type="text" 
-                            class="form-control" 
-                            id="messageInput" 
-                            placeholder="Share your ideas, ambitions, or ask for guidance..." 
-                            aria-label="Message input"
-                            autocomplete="off">
-                        <button type="submit" class="btn btn-primary" aria-label="Send message">
-                            <span class="button-text">Send</span>
-                            <div class="spinner-border spinner-border-sm d-none" role="status">
-                                <span class="visually-hidden">Loading...</span>
-                            </div>
-                        </button>
-                    </form>
+                <div class="form-check form-switch">
+                    <input class="form-check-input model-toggle" type="checkbox" id="llamaToggle" value="llama">
+                    <label class="form-check-label" for="llamaToggle">LLaMA</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input model-toggle" type="checkbox" id="gemmaToggle" value="gemma">
+                    <label class="form-check-label" for="gemmaToggle">Gemma</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input model-toggle" type="checkbox" id="mistralToggle" value="mistral">
+                    <label class="form-check-label" for="mistralToggle">Mistral</label>
                 </div>
             </div>
 
-            <!-- Quick Actions -->
-            <div class="col-md-4 col-lg-3 bg-dark p-3 hotkey-sidebar">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4>Partnership Tools</h4>
-                    <button id="themeToggle" class="btn btn-outline-secondary btn-sm" aria-label="Toggle theme">
-                        <i class="theme-icon"></i>
-                    </button>
+            <h5>Model Configuration</h5>
+            <div class="mb-3">
+                <label class="form-label">Temperature</label>
+                <input type="range" class="form-range" id="tempRange" min="0" max="2" step="0.1">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Max Tokens</label>
+                <input type="number" class="form-control" id="maxTokens" value="2048">
+            </div>
+
+            <h5>Data Import/Export</h5>
+            <div class="btn-group w-100 mb-3">
+                <button class="btn btn-outline-primary" id="importBtn">
+                    <i class="bi bi-upload"></i> Import
+                </button>
+                <button class="btn btn-outline-primary" id="exportBtn">
+                    <i class="bi bi-download"></i> Export
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="flex-grow-1 vh-100 overflow-auto">
+            <!-- Header -->
+            <header class="dashboard-header p-3 mb-4 bg-dark text-white">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-person-circle fs-1 me-3"></i>
+                        <div>
+                            <h1 class="h3 mb-0">AIDEN Dashboard</h1>
+                            <p class="text-muted mb-0">Digital Enlightenment Interface</p>
+                        </div>
+                    </div>
+                    <div class="user-controls">
+                        <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#addWidgetModal">
+                            <i class="bi bi-plus-circle"></i> Add Widget
+                        </button>
+                        <button class="btn btn-outline-primary me-2">
+                            <i class="bi bi-gear-fill"></i> Settings
+                        </button>
+                        <button class="btn btn-primary">
+                            <i class="bi bi-person-fill"></i> Profile
+                        </button>
+                    </div>
                 </div>
-                <div class="list-group">
-                    <div class="list-group-item">
-                        <strong>I</strong> - Idea Vault
+            </header>
+
+            <!-- Dynamic Content -->
+            <!-- Dynamic Content -->
+            <main class="container-fluid">
+                <!-- Control Panel -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Control Panel</h5>
+                            </div>
+                            <div class="card-body">
+                                <!-- Input Controls -->
+                                <div class="mb-3">
+                                    <h6 class="mb-2">Input Controls</h6>
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary" id="attachFileBtn">
+                                            <i class="bi bi-paperclip"></i> Attach File
+                                        </button>
+                                        <button class="btn btn-primary" id="voiceBtn">
+                                            <i class="bi bi-mic"></i> Voice
+                                        </button>
+                                        <button class="btn btn-primary" id="imageCreateBtn">
+                                            <i class="bi bi-image"></i> Create Image
+                                        </button>
+                                        <button class="btn btn-primary" id="cameraBtn">
+                                            <i class="bi bi-camera-video"></i> Camera
+                                        </button>
+                                        <button class="btn btn-primary" id="searchBtn">
+                                            <i class="bi bi-search"></i> Perplexity Search
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- Mode Selection -->
+                                <div>
+                                    <h6 class="mb-2">Mode Selection</h6>
+                                    <div class="btn-group">
+                                        <button class="btn btn-outline-secondary" id="researchMode">
+                                            <i class="bi bi-search"></i> Research
+                                        </button>
+                                        <button class="btn btn-outline-secondary active" id="generalMode">
+                                            <i class="bi bi-chat"></i> General Chat
+                                        </button>
+                                        <button class="btn btn-outline-secondary" id="proposalMode">
+                                            <i class="bi bi-file-text"></i> Proposal
+                                        </button>
+                                        <button class="btn btn-outline-secondary" id="webdevMode">
+                                            <i class="bi bi-code-square"></i> Web Dev
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="list-group-item">
-                        <strong>P</strong> - Project Planning
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                            <div class="card-header">
+                                <h5>Chat Interface</h5>
+                            </div>
+                            <div class="card-body">
+                                <div id="chatMessages" class="chat-messages mb-3" style="height: 300px; overflow-y: auto;">
+                                    <!-- Messages will load here -->
+                                </div>
+                                <div class="chat-input-area">
+                                    <div class="input-group">
+                                        <textarea class="form-control" id="messageInput" rows="1" placeholder="Type your message..."></textarea>
+                                        <button class="btn btn-primary" id="sendMessage">
+                                            <i class="bi bi-send"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="list-group-item">
-                        <strong>R</strong> - Resource Finder
+
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header">
+                                <h5>Widget Area</h5>
+                            </div>
+                            <div class="card-body" id="widgetContainer">
+                                <!-- Video Widget -->
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <h6 class="mb-0">Featured Video</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="ratio ratio-16x9">
+                                            <video id="mainVideo" class="w-100" controls preload="metadata" playsinline autoplay muted
+                                                onloadedmetadata="this.muted=true">
+                                                <source src="https://v.idomoo.ai/12032/f0f12389-1bb4-4a39-9782-75065548aca6/vh6jam71a922c2bp1f1wnkhq2u1d291v1p2h3f111s.mp4" type="video/mp4">
+                                                <p class="text-danger">Your browser does not support HTML5 video.</p>
+                                            </video>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Dynamic Widgets Load Here -->
+                            </div>
+                        </div>
                     </div>
-                    <div class="list-group-item">
-                        <strong>M</strong> - Motivation Boost
-                    </div>
-                    <div class="list-group-item">
-                        <strong>C</strong> - Adaptive Integrated Diverse Enhancement Node 
-                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Add Widget Modal -->
+    <div class="modal fade" id="addWidgetModal" tabindex="-1" aria-labelledby="addWidgetModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addWidgetModalLabel">Add Widget</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <select class="form-select" id="widgetTypeSelect">
+                        <option value="task_summary">Task Summary</option>
+                        <option value="progress_chart">Progress Chart</option>
+                        <option value="recent_activity">Recent Activity</option>
+                        <option value="quick_actions">Quick Actions</option>
+                        <option value="milestone_tracker">Milestone Tracker</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="addWidgetBtn">Add Widget</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
-    <script src="/static/js/aidenIntegration.js"></script>
-    <script src="/static/js/chat.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+    <script>
+        // Toast notification function
+        function showNotification(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast position-fixed bottom-0 end-0 m-3';
+            toast.setAttribute('role', 'alert');
+            toast.innerHTML = `
+                <div class="toast-header">
+                    <strong class="me-auto">Notification</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                </div>
+                <div class="toast-body">${message}</div>
+            `;
+            document.body.appendChild(toast);
+            const bsToast = new bootstrap.Toast(toast);
+            bsToast.show();
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        // Perplexity Search Function
+        async function performPerplexitySearch(query) {
+            try {
+                const response = await fetch('https://api.perplexity.ai/search', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ query })
+                });
+                const data = await response.json();
+                addMessage(`Search Results: ${data.results}`, false);
+            } catch (error) {
+                showNotification('Error performing search. Please try again.');
+            }
+        }
+
+        // Chat functionality
+        const chatMessages = document.getElementById('chatMessages');
+        const messageInput = document.getElementById('messageInput');
+        const sendMessageBtn = document.getElementById('sendMessage');
+
+        function addMessage(message, isUser = true) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `chat-message ${isUser ? 'user-message' : 'ai-message'} p-2 mb-2 rounded`;
+            msgDiv.style.backgroundColor = isUser ? '#007bff' : '#6c757d';
+            msgDiv.style.color = '#fff';
+            msgDiv.style.maxWidth = '80%';
+            msgDiv.style.marginLeft = isUser ? 'auto' : '0';
+            msgDiv.textContent = message;
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        sendMessageBtn.addEventListener('click', () => {
+            const message = messageInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                messageInput.value = '';
+                // Check if it's a search query
+                if (message.toLowerCase().startsWith('/search ')) {
+                    const searchQuery = message.slice(8);
+                    performPerplexitySearch(searchQuery);
+                } else {
+                    // Simulate AI response
+                    setTimeout(() => {
+                        addMessage('Message received. This is a placeholder response.', false);
+                    }, 1000);
+                }
+            }
+        });
+
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessageBtn.click();
+            }
+        });
+
+        // Control panel buttons
+        document.getElementById('attachFileBtn').addEventListener('click', () => {
+            showNotification('File attachment feature coming soon');
+        });
+
+        document.getElementById('voiceBtn').addEventListener('click', () => {
+            showNotification('Voice input feature coming soon');
+        });
+
+        document.getElementById('imageCreateBtn').addEventListener('click', () => {
+            showNotification('Image creation feature coming soon');
+        });
+
+        document.getElementById('cameraBtn').addEventListener('click', () => {
+            showNotification('Camera feature coming soon');
+        });
+
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            const query = prompt('Enter your search query:');
+            if (query) {
+                performPerplexitySearch(query);
+            }
+        });
+
+        // Mode selection buttons
+        const modeButtons = ['researchMode', 'generalMode', 'proposalMode', 'webdevMode'];
+        modeButtons.forEach(buttonId => {
+            document.getElementById(buttonId).addEventListener('click', (e) => {
+                document.querySelectorAll('.btn-outline-secondary').forEach(btn => btn.classList.remove('active'));
+                e.target.closest('.btn').classList.add('active');
+                showNotification(`Switched to ${buttonId.replace('Mode', '')} mode`);
+            });
+        });
+
+        // Widget Handling
+        document.getElementById('addWidgetBtn').addEventListener('click', () => {
+            const widgetType = document.getElementById('widgetTypeSelect').value;
+            const widgetContainer = document.getElementById('widgetContainer');
+            const newWidget = document.createElement('div');
+            newWidget.className = 'widget card mb-3';
+            newWidget.innerHTML = `
+                <div class="card-header">
+                    <h6 class="mb-0">${widgetType.replace('_', ' ').toUpperCase()}</h6>
+                </div>
+                <div class="card-body">
+                    <p>New Widget: ${widgetType}</p>
+                </div>
+            `;
+            widgetContainer.appendChild(newWidget);
+            const modal = bootstrap.Modal.getInstance(document.getElementById('addWidgetModal'));
+            modal.hide();
+            showNotification('Widget added successfully');
+        });
+
+        // Video player error handling
+        const video = document.getElementById('mainVideo');
+        video.addEventListener('error', () => {
+            showNotification('Error loading video. Please try again later.');
+        });
+    </script>
 </body>
+
+</html>
+
+<!doctype html>
+<html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" lang="en-US" >
+  <head>
+	  
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  
+    <!-- This is Squarespace. --><!-- pete-smith-88yk -->
+<base href="">
+<meta charset="utf-8" />
+<title>Services &mdash; Bexar Advanced Solutions Group</title>
+<meta http-equiv="Accept-CH" content="Sec-CH-UA-Platform-Version, Sec-CH-UA-Model" /><link rel="icon" type="image/x-icon" href="https://assets.squarespace.com/universal/default-favicon.ico"/>
+<link rel="canonical" href="https://www.bexarasg.com/new-page"/>
+<meta property="og:site_name" content="Bexar Advanced Solutions Group"/>
+<meta property="og:title" content="Services &mdash; Bexar Advanced Solutions Group"/>
+<meta property="og:url" content="https://www.bexarasg.com/new-page"/>
+<meta property="og:type" content="website"/>
+<meta itemprop="name" content="Services — Bexar Advanced Solutions Group"/>
+<meta itemprop="url" content="https://www.bexarasg.com/new-page"/>
+<meta name="twitter:title" content="Services — Bexar Advanced Solutions Group"/>
+<meta name="twitter:url" content="https://www.bexarasg.com/new-page"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="description" content="" />
+<link rel="preconnect" href="https://images.squarespace-cdn.com">
+<script type="text/javascript" src="//use.typekit.net/ik/3kb9tejZo14WuDyMRrWHHpRgwaH0-O-y7yVq3XmTUktfe0CffFHN4UJLFRbh52jhWDmyFcIXwQS3w2IaZeJkFDbDF2m8ZRw3jy7FMPG0SemXZPuDdA8X-fXt5Y8nO1FUiABkZWF3jAF8OcFzdPUKZWyyScBDZkoRdhXCdeNRjAUGdaFXOYg8ie9lShuTie6l52yo-koDSWmyScmDSeBRZPoRdhXCiaiaOc48peBkjWF1OcFzdPUaiaS0SemXZPuDdA8X-fXt5Y8nO1FUiABkZWF3jAF8OcFzdPJwSY4zpe8ljPu0daZyJ6oCiewljcNqdhoTOQIaFPG4fHCgIMMjMPMfH6qJtKGbMg62JMJ7fbKzMsMMeMb6MKGHfO2IMsMMeM96MKG4fH3gIMMjfkMfH6qJnbIbMg6eJMJ7fbKOMsMMeMS6MKG4fHqgIMMjffMfH6qJtkGbMg6FJMJ7fbK3MsMMeMt6MKGHfOYIMsMMeMv6MKG4fJ3gIMMjIPMfH6qJxKCbMs65JMHbMZaRGrJB.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script type="text/javascript" crossorigin="anonymous" defer="true" nomodule="nomodule" src="//assets.squarespace.com/@sqs/polyfiller/1.6/legacy.js"></script>
+<script type="text/javascript" crossorigin="anonymous" defer="true" src="//assets.squarespace.com/@sqs/polyfiller/1.6/modern.js"></script>
+<script type="text/javascript">SQUARESPACE_ROLLUPS = {};</script>
+<script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/extract-css-runtime-a972db15e4f3d1df977a-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-extract_css_runtime');</script>
+<script crossorigin="anonymous" src="//assets.squarespace.com/universal/scripts-compressed/extract-css-runtime-a972db15e4f3d1df977a-min.en-US.js" defer ></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/extract-css-moment-js-vendor-6c569122bfa66a51a056-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-extract_css_moment_js_vendor');</script>
+<script crossorigin="anonymous" src="//assets.squarespace.com/universal/scripts-compressed/extract-css-moment-js-vendor-6c569122bfa66a51a056-min.en-US.js" defer ></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/cldr-resource-pack-457f4d444e0242501efb-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-cldr_resource_pack');</script>
+<script crossorigin="anonymous" src="//assets.squarespace.com/universal/scripts-compressed/cldr-resource-pack-457f4d444e0242501efb-min.en-US.js" defer ></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/common-vendors-stable-61293f01d648eef165fc-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-common_vendors_stable');</script>
+<script crossorigin="anonymous" src="//assets.squarespace.com/universal/scripts-compressed/common-vendors-stable-61293f01d648eef165fc-min.en-US.js" defer ></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/common-vendors-314ee5faa8772ea96b8d-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-common_vendors');</script>
+<script crossorigin="anonymous" src="//assets.squarespace.com/universal/scripts-compressed/common-vendors-314ee5faa8772ea96b8d-min.en-US.js" defer ></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/common-fd23f98348434a5bd766-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-common');</script>
+<script crossorigin="anonymous" src="//assets.squarespace.com/universal/scripts-compressed/common-fd23f98348434a5bd766-min.en-US.js" defer ></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/performance-6103798e486f903dfbc9-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-performance');</script>
+<script crossorigin="anonymous" src="//assets.squarespace.com/universal/scripts-compressed/performance-6103798e486f903dfbc9-min.en-US.js" defer ></script><script data-name="static-context">Static = window.Static || {}; Static.SQUARESPACE_CONTEXT = {"betaFeatureFlags":["campaigns_import_discounts","campaigns_new_image_layout_picker","order_status_page_checkout_landing_enabled","contacts_and_campaigns_redesign","campaigns_thumbnail_layout","campaigns_discount_section_in_automations","marketing_landing_page","marketing_automations","i18n_beta_website_locales","campaigns_discount_section_in_blasts"],"facebookAppId":"314192535267336","facebookApiVersion":"v6.0","rollups":{"squarespace-announcement-bar":{"js":"//assets.squarespace.com/universal/scripts-compressed/announcement-bar-7b53605cc8576be641b9-min.en-US.js"},"squarespace-audio-player":{"css":"//assets.squarespace.com/universal/styles-compressed/audio-player-ef238f99d44a3bdc6fbe-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/audio-player-baaded498f19666ded7a-min.en-US.js"},"squarespace-blog-collection-list":{"css":"//assets.squarespace.com/universal/styles-compressed/blog-collection-list-8ec841cacfb75d4282f4-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/blog-collection-list-4377c2385a6ed1c8a0ca-min.en-US.js"},"squarespace-calendar-block-renderer":{"css":"//assets.squarespace.com/universal/styles-compressed/calendar-block-renderer-10dac239e5ffd3b32e9c-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/calendar-block-renderer-1ba2b2122bcc1a8d1000-min.en-US.js"},"squarespace-chartjs-helpers":{"css":"//assets.squarespace.com/universal/styles-compressed/chartjs-helpers-9e75b5d75bb5cb4c1f67-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/chartjs-helpers-34714252889806c8de3d-min.en-US.js"},"squarespace-comments":{"css":"//assets.squarespace.com/universal/styles-compressed/comments-a0d9356d7c1596ab2c53-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/comments-b981c422e0ad5a3cb6d5-min.en-US.js"},"squarespace-custom-css-popup":{"css":"//assets.squarespace.com/universal/styles-compressed/custom-css-popup-d1b86e2485ce54137a13-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/custom-css-popup-1a747bea4327498b7cca-min.en-US.js"},"squarespace-dialog":{"css":"//assets.squarespace.com/universal/styles-compressed/dialog-2dcac307baebe70727dc-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/dialog-a5bc21c81abd6f5aa853-min.en-US.js"},"squarespace-events-collection":{"css":"//assets.squarespace.com/universal/styles-compressed/events-collection-10dac239e5ffd3b32e9c-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/events-collection-53786380114daa5f97d0-min.en-US.js"},"squarespace-form-rendering-utils":{"js":"//assets.squarespace.com/universal/scripts-compressed/form-rendering-utils-88b98109502030dada77-min.en-US.js"},"squarespace-forms":{"css":"//assets.squarespace.com/universal/styles-compressed/forms-b952cddb94c5d471b8d3-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/forms-3b30adb3e689f31c1fb4-min.en-US.js"},"squarespace-gallery-collection-list":{"css":"//assets.squarespace.com/universal/styles-compressed/gallery-collection-list-8ec841cacfb75d4282f4-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/gallery-collection-list-a369197c40b03560a7c8-min.en-US.js"},"squarespace-image-zoom":{"css":"//assets.squarespace.com/universal/styles-compressed/image-zoom-8ec841cacfb75d4282f4-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/image-zoom-c58deceade4dbcf1d4b9-min.en-US.js"},"squarespace-pinterest":{"css":"//assets.squarespace.com/universal/styles-compressed/pinterest-8ec841cacfb75d4282f4-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/pinterest-59c2745db3628b23ab11-min.en-US.js"},"squarespace-popup-overlay":{"css":"//assets.squarespace.com/universal/styles-compressed/popup-overlay-e89b4cc96c222ed66c64-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/popup-overlay-6b9245338f0397a5e55e-min.en-US.js"},"squarespace-product-quick-view":{"css":"//assets.squarespace.com/universal/styles-compressed/product-quick-view-2f87c3dcb76ca485179d-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/product-quick-view-23fb5cb6828373bf6a5d-min.en-US.js"},"squarespace-products-collection-item-v2":{"css":"//assets.squarespace.com/universal/styles-compressed/products-collection-item-v2-8ec841cacfb75d4282f4-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/products-collection-item-v2-973b63a555a476194717-min.en-US.js"},"squarespace-products-collection-list-v2":{"css":"//assets.squarespace.com/universal/styles-compressed/products-collection-list-v2-8ec841cacfb75d4282f4-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/products-collection-list-v2-ae58893a5aff6dc66462-min.en-US.js"},"squarespace-search-page":{"css":"//assets.squarespace.com/universal/styles-compressed/search-page-917382e71b023cec7555-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/search-page-a689e93b7ccee7b6560b-min.en-US.js"},"squarespace-search-preview":{"js":"//assets.squarespace.com/universal/scripts-compressed/search-preview-f57e3f4d0ad3cbe3ae33-min.en-US.js"},"squarespace-simple-liking":{"css":"//assets.squarespace.com/universal/styles-compressed/simple-liking-4279cc7bb78333b8db43-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/simple-liking-b418c130feecdbb4de3e-min.en-US.js"},"squarespace-social-buttons":{"css":"//assets.squarespace.com/universal/styles-compressed/social-buttons-3a7d186e7e5e3b30911b-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/social-buttons-59105e14771b45bd050c-min.en-US.js"},"squarespace-tourdates":{"css":"//assets.squarespace.com/universal/styles-compressed/tourdates-8ec841cacfb75d4282f4-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/tourdates-1a4b1d46cdbeda8f72e1-min.en-US.js"},"squarespace-website-overlays-manager":{"css":"//assets.squarespace.com/universal/styles-compressed/website-overlays-manager-efd3c12d460f58781eb3-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/website-overlays-manager-e2ecdf912016743c2d9c-min.en-US.js"}},"pageType":2,"website":{"id":"5a6a4170017db274345ef30b","identifier":"pete-smith-88yk","websiteType":1,"contentModifiedOn":1602021008036,"cloneable":false,"hasBeenCloneable":false,"siteStatus":{},"language":"en-US","timeZone":"America/Denver","machineTimeZoneOffset":-25200000,"timeZoneOffset":-25200000,"timeZoneAbbr":"MST","siteTitle":"Bexar Advanced Solutions Group","fullSiteTitle":"Services \u2014 Bexar Advanced Solutions Group","siteDescription":"<p>Contracting services to support our Nation's Veterans</p>","location":{"mapLat":41.0402748,"mapLng":-111.93822950000003,"addressTitle":"Bexar Advanced Solutions","addressLine1":"47 Crestwood Road","addressLine2":"Kaysville, UT, 84037","addressCountry":"United States"},"logoImageId":"5c48a6a021c67c91562f97bc","shareButtonOptions":{"8":true,"7":true,"2":true,"1":true},"logoImageUrl":"//images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548265121370-LA0Q5FRU6BRUNE1AL7MU/final+bexar+logo.png","authenticUrl":"https://www.bexarasg.com","internalUrl":"https://pete-smith-88yk.squarespace.com","baseUrl":"https://www.bexarasg.com","primaryDomain":"www.bexarasg.com","sslSetting":3,"isHstsEnabled":false,"typekitId":"","statsMigrated":false,"imageMetadataProcessingEnabled":false,"screenshotId":"73332d3c0952c0db3b8aae84a6013eec0f7dd44f336b341cdcf351477fbcec79","showOwnerLogin":false},"websiteSettings":{"id":"5a6a4170017db274345ef30e","websiteId":"5a6a4170017db274345ef30b","subjects":[],"country":"US","state":"UT","simpleLikingEnabled":true,"mobileInfoBarSettings":{"isContactEmailEnabled":false,"isContactPhoneNumberEnabled":false,"isLocationEnabled":false,"isBusinessHoursEnabled":false},"commentLikesAllowed":true,"commentAnonAllowed":true,"commentThreaded":true,"commentApprovalRequired":false,"commentAvatarsOn":true,"commentSortType":2,"commentFlagThreshold":0,"commentFlagsAllowed":true,"commentEnableByDefault":true,"commentDisableAfterDaysDefault":0,"disqusShortname":"","commentsEnabled":false,"contactPhoneNumber":"801)444-0029","businessHours":{"monday":{"text":"","ranges":[{}]},"tuesday":{"text":"","ranges":[{}]},"wednesday":{"text":"","ranges":[{}]},"thursday":{"text":"","ranges":[{}]},"friday":{"text":"","ranges":[{}]},"saturday":{"text":"","ranges":[{}]},"sunday":{"text":"","ranges":[{}]}},"storeSettings":{"returnPolicy":null,"termsOfService":null,"privacyPolicy":null,"expressCheckout":false,"continueShoppingLinkUrl":"/","useLightCart":false,"showNoteField":false,"shippingCountryDefaultValue":"US","billToShippingDefaultValue":false,"showShippingPhoneNumber":true,"isShippingPhoneRequired":false,"showBillingPhoneNumber":true,"isBillingPhoneRequired":false,"currenciesSupported":["CHF","HKD","MXN","EUR","DKK","USD","CAD","MYR","NOK","THB","AUD","SGD","ILS","PLN","GBP","CZK","SEK","NZD","PHP","RUB"],"defaultCurrency":"USD","selectedCurrency":"USD","measurementStandard":1,"showCustomCheckoutForm":false,"checkoutPageMarketingOptInEnabled":false,"enableMailingListOptInByDefault":false,"sameAsRetailLocation":false,"merchandisingSettings":{"scarcityEnabledOnProductItems":false,"scarcityEnabledOnProductBlocks":false,"scarcityMessageType":"DEFAULT_SCARCITY_MESSAGE","scarcityThreshold":10,"multipleQuantityAllowedForServices":true,"restockNotificationsEnabled":false,"restockNotificationsSuccessText":"","restockNotificationsMailingListSignUpEnabled":false,"relatedProductsEnabled":false,"relatedProductsOrdering":"random","soldOutVariantsDropdownDisabled":false,"productComposerOptedIn":false,"productComposerABTestOptedOut":false,"productReviewsEnabled":false,"displayImportedProductReviewsEnabled":false,"hasOptedToCollectNativeReviews":false},"minimumOrderSubtotalEnabled":false,"isLive":false,"multipleQuantityAllowedForServices":true},"useEscapeKeyToLogin":true,"ssBadgeType":1,"ssBadgePosition":4,"ssBadgeVisibility":1,"ssBadgeDevices":1,"pinterestOverlayOptions":{"mode":"disabled"},"ampEnabled":false,"userAccountsSettings":{"loginAllowed":false,"signupAllowed":false}},"cookieSettings":{"isCookieBannerEnabled":false,"isRestrictiveCookiePolicyEnabled":false,"cookieBannerText":"","cookieBannerTheme":"","cookieBannerVariant":"","cookieBannerPosition":"","cookieBannerCtaVariant":"","cookieBannerCtaText":"","cookieBannerAcceptType":"OPT_IN","cookieBannerOptOutCtaText":"","cookieBannerHasOptOut":false,"cookieBannerHasManageCookies":true,"cookieBannerManageCookiesLabel":"","cookieBannerSavedPreferencesText":"","cookieBannerSavedPreferencesLayout":"PILL"},"websiteCloneable":false,"collection":{"title":"Services","id":"5c48a1164d7a9ca636369e34","fullUrl":"/new-page","type":10,"permissionType":1},"subscribed":false,"appDomain":"squarespace.com","templateTweakable":true,"tweakJSON":{"aspect-ratio":"Auto","gallery-arrow-style":"Round Corners","gallery-aspect-ratio":"3:2 Standard","gallery-auto-crop":"true","gallery-autoplay":"false","gallery-design":"Slideshow","gallery-info-overlay":"Always Show","gallery-loop":"false","gallery-navigation":"Thumbnails","gallery-show-arrows":"true","gallery-transitions":"Fade","galleryArrowBackground":"rgba(34,34,34,1)","galleryArrowColor":"rgba(255,255,255,1)","galleryAutoplaySpeed":"3","galleryCircleColor":"rgba(255,255,255,1)","galleryInfoBackground":"rgba(0, 0, 0, .7)","galleryThumbnailSize":"100px","gridSize":"350px","gridSpacing":"20px","hdr-bg-image":"{background-image:none;background-position:center center;background-size:auto;background-attachment:fixed;background-repeat:repeat}","product-gallery-auto-crop":"true","product-image-auto-crop":"true","tweak-v1-related-products-title-spacing":"50px"},"templateId":"503ba86de4b04953d0f49846","templateVersion":"7","pageFeatures":[1,2,4],"gmRenderKey":"QUl6YVN5Q0JUUk9xNkx1dkZfSUUxcjQ2LVQ0QWVUU1YtMGQ3bXk4","templateScriptsRootUrl":"https://static1.squarespace.com/static/ta/5016d42984ae3ecc9e018d91/1672/scripts/","impersonatedSession":false,"tzData":{"zones":[[-420,"US","M%sT",null]],"rules":{"US":[[1967,2006,null,"Oct","lastSun","2:00","0","S"],[1987,2006,null,"Apr","Sun>=1","2:00","1:00","D"],[2007,"max",null,"Mar","Sun>=8","2:00","1:00","D"],[2007,"max",null,"Nov","Sun>=1","2:00","0","S"]]}},"showAnnouncementBar":false,"recaptchaEnterpriseContext":{"recaptchaEnterpriseSiteKey":"6LdDFQwjAAAAAPigEvvPgEVbb7QBm-TkVJdDTlAv"},"i18nContext":{"timeZoneData":{"id":"America/Denver","name":"Mountain Time"}},"env":"PRODUCTION"};</script><script type="module">Squarespace.load(window);</script>
+<script data-sqs-type="imageloader-bootstrapper" type="module">if(window.ImageLoader) window.ImageLoader.bootstrap({}, document);</script>
+<script type="module">Squarespace.afterBodyLoad(Y);</script>
+<script type="application/ld+json">{"url":"https://www.bexarasg.com","name":"Bexar Advanced Solutions Group","description":"<p>Contracting services to support our Nation's Veterans</p>","image":"//images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548265121370-LA0Q5FRU6BRUNE1AL7MU/final+bexar+logo.png","@context":"http://schema.org","@type":"WebSite"}</script><script type="application/ld+json">{"legalName":"Bexar Advanced Solutions","address":"47 Crestwood Road\nKaysville, UT, 84037\nUnited States","email":"","telephone":"801)444-0029","sameAs":[],"@context":"http://schema.org","@type":"Organization"}</script><script type="application/ld+json">{"address":"47 Crestwood Road\nKaysville, UT, 84037\nUnited States","image":"https://static1.squarespace.com/static/5a6a4170017db274345ef30b/t/5c48a6a021c67c91562f97bc/1602021008036/","name":"Bexar Advanced Solutions","openingHours":", , , , , , ","@context":"http://schema.org","@type":"LocalBusiness"}</script><link rel="stylesheet" type="text/css" href="https://static1.squarespace.com/static/sitecss/5a6a4170017db274345ef30b/77/503ba86de4b04953d0f49846/5a7e191dc83025378b5e76e1/1672/site.css"/><script>Static.COOKIE_BANNER_CAPABLE = true;</script>
+<!-- End of Squarespace Headers -->
+    <script defer="true" src="https://static1.squarespace.com/static/ta/5016d42984ae3ecc9e018d91/1672/scripts/site-bundle.js" type="text/javascript"></script>
+  </head>
+  
+  <body class="canvas-setting-full-width hide-delimiter  banner-content-page-title-description banner-alignment-center page-thumbnail-as-banner stretch-page-thumbnail top-navigation-position-above-banner top-navigation-alignment-center disable-navigation-border  sidebar-position-right   footer-alignment-center  social-icon-style-normal social-icon-placement-top-only  blog-list-display-full blog-byline-bottom blog-dateline-top disable-pagination-border    show-products-category-navigation hide-album-share-link  event-show-past-events event-thumbnails event-thumbnail-size-32-standard event-date-label  event-list-show-cats event-list-date event-list-time event-list-address   event-icalgcal-links  event-excerpts      gallery-design-slideshow aspect-ratio-auto lightbox-style-dark gallery-navigation-thumbnails gallery-info-overlay-always-show gallery-aspect-ratio-32-standard gallery-arrow-style-round-corners gallery-transitions-fade gallery-show-arrows gallery-auto-crop   product-list-titles-under product-list-alignment-center product-item-size-43-four-thirds product-image-auto-crop product-gallery-size-32-standard product-gallery-auto-crop show-product-price show-product-item-nav product-social-sharing tweak-v1-related-products-image-aspect-ratio-11-square tweak-v1-related-products-details-alignment-center newsletter-style-dark hide-opentable-icons opentable-style-dark small-button-style-outline small-button-shape-rounded medium-button-style-solid medium-button-shape-rounded large-button-style-solid large-button-shape-rounded image-block-poster-text-alignment-center image-block-card-dynamic-font-sizing image-block-card-content-position-center image-block-card-text-alignment-left image-block-overlap-dynamic-font-sizing image-block-overlap-content-position-center image-block-overlap-text-alignment-left image-block-collage-dynamic-font-sizing image-block-collage-content-position-top image-block-collage-text-alignment-left image-block-stack-dynamic-font-sizing image-block-stack-text-alignment-left button-style-outline button-corner-style-square tweak-product-quick-view-button-style-floating tweak-product-quick-view-button-position-bottom tweak-product-quick-view-lightbox-excerpt-display-truncate tweak-product-quick-view-lightbox-show-arrows tweak-product-quick-view-lightbox-show-close-button tweak-product-quick-view-lightbox-controls-weight-light native-currency-code-usd collection-type-page collection-5c48a1164d7a9ca636369e34 collection-layout-default mobile-style-available has-logo-image" id="collection-5c48a1164d7a9ca636369e34" ontouchstart="">
+
+		
+		
+<!--MOBILE-->
+<nav id="mobile-navigation">
+  <span id="mobile-navigation-title"><a href="/">Bexar Advanced Solutions Group</a></span>
+  <span id="mobile-navigation-label"></span>
+  <ul>
+    
+      <li class="">
+        
+          
+            <a href="/">Home</a>
+          
+          
+        
+      </li>
+    
+      <li class=" active-link">
+        
+          
+            <a href="/new-page">Services</a>
+          
+          
+        
+      </li>
+    
+      <li class="">
+        
+          <input type="checkbox" name="folder-toggle-5c48a0a2bba223630dac25dd" id="folder-toggle-5c48a0a2bba223630dac25dd" class="folder-toggle-box hidden" />
+          <label for="folder-toggle-5c48a0a2bba223630dac25dd" class="folder-toggle-label">Projects</label>
+          
+            
+                <a href="/heatlhcare" class="">Heatlhcare</a>
+            
+            
+          
+            
+                <a href="/under-construction" class="">Under Construction</a>
+            
+            
+          
+        
+      </li>
+    
+      <li class="">
+        
+          
+            <a href="/contact-info">Contact Info</a>
+          
+          
+        
+      </li>
+    
+    
+  </ul>
+</nav>
+
+
+		
+
+	  <div id="canvas-wrapper">
+	  	<div id="canvas">
+
+
+				<div id="page-header-wrapper">
+					<div id="page-header">
+
+				    <div id="navigation-top">
+				    	<div class="horizontal-navigation-bar clear with-logo">
+
+				    		<!-- // logo or site title markup in nav area -->
+					      
+					      	
+						      <div id="banner-wrapper" data-content-field="site-title">
+						        <a href="/"><img id="banner" src="//images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548265121370-LA0Q5FRU6BRUNE1AL7MU/final+bexar+logo.png?format=1500w" alt="Bexar Advanced Solutions Group" /></a>
+						      </div>
+					        
+
+					    		
+<nav id="main-navigation" class="main-nav" data-content-field="navigation">
+  <ul>
+  
+
+    
+
+    <li class="page-collection"><a href="/">Home</a><span class="delimiter">/</span></li>
+  
+
+    
+
+    <li class="page-collection active-link"><a href="/new-page">Services</a><span class="delimiter">/</span></li>
+  
+
+    
+
+    <li aria-haspopup="true" class="folder-collection folder"><a href="#" onClick="return false;">Projects</a><span class="delimiter">/</span><div class="subnav"><ul><li class="page-collection"><a href="/heatlhcare">Heatlhcare</a></li><li class="page-collection"><a href="/under-construction">Under Construction</a></li></ul></div></li>
+  
+
+    
+
+    <li class="page-collection"><a href="/contact-info">Contact Info</a><span class="delimiter">/</span></li>
+  
+     
+  </ul>
+</nav>
+
+
+				          
+					      
+
+				    	</div>
+				    </div><!-- navigation-top -->
+
+						<div id="banner-area-wrapper">
+							<div id="banner-area">
+
+							<!-- // page thumbnail image as banner image -->
+							
+                
+                  
+                
+							
+
+							<div class="banner-overlay"></div>
+
+				      <!-- // logo or site title markup in banner area -->
+				      
+				      	
+					      <div id="banner-wrapper" data-content-field="site-title">
+					        <a href="/" rel="bookmark">
+					        	<img id="banner" src="//images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548265121370-LA0Q5FRU6BRUNE1AL7MU/final+bexar+logo.png?format=1500w" alt="Bexar Advanced Solutions Group" />
+						        
+						      </a>
+					      </div>
+				        
+				      
+
+							<!-- // page title markup in banner area -->
+				      
+					      <div id="page-title-wrapper" class="js-text-shrink" data-collection-id="5c48a1164d7a9ca636369e34" data-edit-main-image="Page Banner">
+				          <h1 id="page-title" class="page-title">Services</h1>
+				      		
+				        </div>
+				      
+
+				      </div>
+				    </div><!-- banner-area-wrapper -->
+
+				    <div id="navigation-bottom">
+				    	<div class="horizontal-navigation-bar clear with-logo">
+
+				    		<!-- // logo or site title markup in nav area -->
+					      
+					      	
+						      <div id="banner-wrapper" data-content-field="site-title">
+						        <a href="/"><img id="banner" src="//images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548265121370-LA0Q5FRU6BRUNE1AL7MU/final+bexar+logo.png?format=1500w" alt="Bexar Advanced Solutions Group" /></a>
+						      </div>
+					        
+
+									
+<nav id="main-navigation" class="main-nav" data-content-field="navigation">
+  <ul>
+  
+
+    
+
+    <li class="page-collection"><a href="/">Home</a><span class="delimiter">/</span></li>
+  
+
+    
+
+    <li class="page-collection active-link"><a href="/new-page">Services</a><span class="delimiter">/</span></li>
+  
+
+    
+
+    <li aria-haspopup="true" class="folder-collection folder"><a href="#" onClick="return false;">Projects</a><span class="delimiter">/</span><div class="subnav"><ul><li class="page-collection"><a href="/heatlhcare">Heatlhcare</a></li><li class="page-collection"><a href="/under-construction">Under Construction</a></li></ul></div></li>
+  
+
+    
+
+    <li class="page-collection"><a href="/contact-info">Contact Info</a><span class="delimiter">/</span></li>
+  
+     
+  </ul>
+</nav>
+
+
+
+				          
+					      
+
+				    	</div>
+				    </div><!-- navigation-bottom -->
+
+				  </div>
+				</div><!-- page-header-wrapper -->
+				<div id="page-body-wrapper" class="one-sidebar">
+					<div id="page-body">
+
+						<div id="content-wrapper">
+							<div id="content">
+
+								<div id="page-body-header" class="extra-wrapper">
+									<div class="sqs-layout sqs-grid-12 columns-12 empty" data-layout-label="Services Header Content" data-type="block-field" id="page-header-5c48a1164d7a9ca636369e34"><div class="row sqs-row"><div class="col sqs-col-12 span-12"></div></div></div>
+								</div>
+
+						    <!-- // CATEGORY NAV -->
+						    
+
+						    <div class="main-content" data-content-field="main-content" data-collection-id="5c48a1164d7a9ca636369e34" data-edit-main-image="Page Banner">
+									<div class="sqs-layout sqs-grid-12 columns-12" data-type="page" data-updated-on="1548282043359" id="page-5c48a1164d7a9ca636369e34"><div class="row sqs-row"><div class="col sqs-col-2 span-2"><div class="sqs-block spacer-block sqs-block-spacer sized vsize-1" data-block-type="21" id="block-7536b09996477cbfc930"><div class="sqs-block-content">&nbsp;</div></div></div><div class="col sqs-col-8 span-8"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-176e1e9005bb4bf6402e"><div class="sqs-block-content">
+
+<div class="sqs-html-content">
+  <h2 style="text-align: center; white-space: pre-wrap;">BeXar-Advanced Solutions Group is a collaborative organization of accomplished individuals with over 50 years combined construction experience.&nbsp;</h2>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div></div><div class="col sqs-col-2 span-2"><div class="sqs-block spacer-block sqs-block-spacer sized vsize-1" data-block-type="21" id="block-5129576ba766b926cf81"><div class="sqs-block-content">&nbsp;</div></div></div></div><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-yui_3_17_2_1_1548281228888_104983"><div class="sqs-block-content"><hr /></div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-be72afb6a0c640981d15"><div class="sqs-block-content">
+
+<div class="sqs-html-content">
+  <p style="white-space: pre-wrap;">Design/Build Services<br>BeXar-ASG has an experienced team in providing solutions to your Design-Build needs. We have years of experience in providing design build services. We have a team of Architects and Engineers who can turn your ideas into finished products faster and usually significantly less expensive than traditional design.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-yui_3_17_2_1_1548281228888_101986"><div class="sqs-block-content"><hr /></div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-9a207f928aec46be602c"><div class="sqs-block-content">
+
+<div class="sqs-html-content">
+  <p style="white-space: pre-wrap;">Construction &amp; Engineering&nbsp;<br>BeXar-ASG provides a multidiscipline array of construction and engineering services by utilizing a systems approach stressing communication, safety and quality assurance. We believe successful projects require interaction among individuals whose various technical skills can be blended to realize a common goal.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-yui_3_17_2_1_1548281228888_103494"><div class="sqs-block-content"><hr /></div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-dc386447cc7169997cea"><div class="sqs-block-content">
+
+<div class="sqs-html-content">
+  <p style="white-space: pre-wrap;">Program Management&nbsp;<br>BeXar-ASG provides you with extensive expertise, innovative solutions and excellent decision making abilities to complete your project, successfully, every time. BeXar-ASG provides a multi-disciplined approach to project and program management. We stress safety, communication, quality assurance and on-going assessment. By utilizing state-of-the-art technology and life cycle management best practices, &nbsp;BeXar-ASG delivers results. Our team has a broad base of experience in managing intricate project details.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-yui_3_17_2_1_1548279753874_11665"><div class="sqs-block-content"><hr /></div></div><div class="row sqs-row"><div class="col sqs-col-6 span-6"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_1_1548280700371_44064"><div class="sqs-block-content">
+
+<div class="sqs-html-content">
+  <h3 style="white-space: pre-wrap;">Primary NAICS:</h3><p style="white-space: pre-wrap;">236220</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div></div><div class="col sqs-col-6 span-6"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_1_1548280700371_45176"><div class="sqs-block-content">
+
+<div class="sqs-html-content">
+  <h3 style="white-space: pre-wrap;">Secondary NAICS:</h3><p style="white-space: pre-wrap;">236210, 237110, 237130, 237990, 238160, 238190, 238220, 238290, 238330, 238990, 517510, 561210</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div></div></div><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-yui_3_17_2_1_1548280700371_43155"><div class="sqs-block-content"><hr /></div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_1_1548280700371_24961"><div class="sqs-block-content">
+
+<div class="sqs-html-content">
+  <p style="white-space: pre-wrap;">Specializing in federal contracting Bexar ASG has completed work for the following agences.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div><div class="row sqs-row"><div class="col sqs-col-3 span-3"><div class="sqs-block image-block sqs-block-image" data-aspect-ratio="100" data-block-type="5" id="block-yui_3_17_2_1_1548279753874_14907"><div class="sqs-block-content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+    
+  
+    <div
+        class="
+          image-block-outer-wrapper
+          layout-caption-hidden
+          design-layout-inline
+          combination-animation-none
+          individual-animation-none
+          individual-text-animation-none
+        "
+        data-test="image-block-inline-outer-wrapper"
+    >
+
+      
+
+      
+        <figure
+            class="
+              sqs-block-image-figure
+              intrinsic
+            "
+            style="max-width:216px;"
+        >
+          
+        
+        
+
+        
+          
+            
+          <div
+              
+              
+              class="image-block-wrapper"
+              data-animation-role="image"
+              
+  
+
+          >
+            <div class="sqs-image-shape-container-element
+              
+          
+        
+              has-aspect-ratio
+            " style="
+                position: relative;
+                
+                  padding-bottom:100%;
+                
+                overflow: hidden;-webkit-mask-image: -webkit-radial-gradient(white, black);
+              "
+              >
+                
+                
+                
+                
+                
+                
+                
+                <img data-stretch="false" data-src="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548279996864-VS7BHA32KL9Z6H5RFD1Y/VA_logo.jpg" data-image="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548279996864-VS7BHA32KL9Z6H5RFD1Y/VA_logo.jpg" data-image-dimensions="216x212" data-image-focal-point="0.5,0.5" alt="VA_logo.jpg" data-load="false" elementtiming="system-image-block" src="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548279996864-VS7BHA32KL9Z6H5RFD1Y/VA_logo.jpg" width="216" height="212" alt="" sizes="(max-width: 640px) 100vw, (max-width: 767px) 25vw, 25vw" style="display:block;object-fit: cover; width: 100%; height: 100%; object-position: 50% 50%" onload="this.classList.add(&quot;loaded&quot;)" srcset="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548279996864-VS7BHA32KL9Z6H5RFD1Y/VA_logo.jpg?format=100w 100w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548279996864-VS7BHA32KL9Z6H5RFD1Y/VA_logo.jpg?format=300w 300w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548279996864-VS7BHA32KL9Z6H5RFD1Y/VA_logo.jpg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548279996864-VS7BHA32KL9Z6H5RFD1Y/VA_logo.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548279996864-VS7BHA32KL9Z6H5RFD1Y/VA_logo.jpg?format=1000w 1000w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548279996864-VS7BHA32KL9Z6H5RFD1Y/VA_logo.jpg?format=1500w 1500w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548279996864-VS7BHA32KL9Z6H5RFD1Y/VA_logo.jpg?format=2500w 2500w" loading="lazy" decoding="async" data-loader="sqs">
+
+            </div>
+          </div>
+        
+          
+        
+
+        
+      
+        </figure>
+      
+
+    </div>
+  
+
+
+  
+
+
+</div></div></div><div class="col sqs-col-3 span-3"><div class="sqs-block image-block sqs-block-image" data-block-type="5" id="block-yui_3_17_2_1_1548279753874_16225"><div class="sqs-block-content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+    
+  
+    <div
+        class="
+          image-block-outer-wrapper
+          layout-caption-hidden
+          design-layout-inline
+          combination-animation-none
+          individual-animation-none
+          individual-text-animation-none
+        "
+        data-test="image-block-inline-outer-wrapper"
+    >
+
+      
+
+      
+        <figure
+            class="
+              sqs-block-image-figure
+              intrinsic
+            "
+            style="max-width:227px;"
+        >
+          
+        
+        
+
+        
+          
+            
+          <div
+              
+              
+              class="image-block-wrapper"
+              data-animation-role="image"
+              
+  
+
+          >
+            <div class="sqs-image-shape-container-element
+              
+          
+        
+              has-aspect-ratio
+            " style="
+                position: relative;
+                
+                  padding-bottom:122.90748596191406%;
+                
+                overflow: hidden;-webkit-mask-image: -webkit-radial-gradient(white, black);
+              "
+              >
+                
+                
+                
+                
+                
+                
+                
+                <img data-stretch="false" data-src="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280175968-L2TENPJEW4SSFA0PZRFN/Army_logo.png" data-image="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280175968-L2TENPJEW4SSFA0PZRFN/Army_logo.png" data-image-dimensions="227x279" data-image-focal-point="0.5,0.5" alt="Army_logo.png" data-load="false" elementtiming="system-image-block" src="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280175968-L2TENPJEW4SSFA0PZRFN/Army_logo.png" width="227" height="279" alt="" sizes="(max-width: 640px) 100vw, (max-width: 767px) 25vw, 25vw" style="display:block;object-fit: cover; width: 100%; height: 100%; object-position: 50% 50%" onload="this.classList.add(&quot;loaded&quot;)" srcset="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280175968-L2TENPJEW4SSFA0PZRFN/Army_logo.png?format=100w 100w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280175968-L2TENPJEW4SSFA0PZRFN/Army_logo.png?format=300w 300w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280175968-L2TENPJEW4SSFA0PZRFN/Army_logo.png?format=500w 500w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280175968-L2TENPJEW4SSFA0PZRFN/Army_logo.png?format=750w 750w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280175968-L2TENPJEW4SSFA0PZRFN/Army_logo.png?format=1000w 1000w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280175968-L2TENPJEW4SSFA0PZRFN/Army_logo.png?format=1500w 1500w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280175968-L2TENPJEW4SSFA0PZRFN/Army_logo.png?format=2500w 2500w" loading="lazy" decoding="async" data-loader="sqs">
+
+            </div>
+          </div>
+        
+          
+        
+
+        
+      
+        </figure>
+      
+
+    </div>
+  
+
+
+  
+
+
+</div></div></div><div class="col sqs-col-3 span-3"><div class="sqs-block image-block sqs-block-image" data-aspect-ratio="83.03571428571429" data-block-type="5" id="block-yui_3_17_2_1_1548279753874_18669"><div class="sqs-block-content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+    
+  
+    <div
+        class="
+          image-block-outer-wrapper
+          layout-caption-hidden
+          design-layout-inline
+          combination-animation-none
+          individual-animation-none
+          individual-text-animation-none
+        "
+        data-test="image-block-inline-outer-wrapper"
+    >
+
+      
+
+      
+        <figure
+            class="
+              sqs-block-image-figure
+              intrinsic
+            "
+            style="max-width:1344px;"
+        >
+          
+        
+        
+
+        
+          
+            
+          <div
+              
+              
+              class="image-block-wrapper"
+              data-animation-role="image"
+              
+  
+
+          >
+            <div class="sqs-image-shape-container-element
+              
+          
+        
+              has-aspect-ratio
+            " style="
+                position: relative;
+                
+                  padding-bottom:83.03571319580078%;
+                
+                overflow: hidden;-webkit-mask-image: -webkit-radial-gradient(white, black);
+              "
+              >
+                
+                
+                
+                
+                
+                
+                
+                <img data-stretch="false" data-src="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280271292-MWFNLRL88LXZNT38H3BN/image-asset.png" data-image="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280271292-MWFNLRL88LXZNT38H3BN/image-asset.png" data-image-dimensions="1344x1128" data-image-focal-point="0.5,0.5" alt="" data-load="false" elementtiming="system-image-block" src="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280271292-MWFNLRL88LXZNT38H3BN/image-asset.png" width="1344" height="1128" alt="" sizes="(max-width: 640px) 100vw, (max-width: 767px) 25vw, 25vw" style="display:block;object-fit: cover; width: 100%; height: 100%; object-position: 50% 50%" onload="this.classList.add(&quot;loaded&quot;)" srcset="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280271292-MWFNLRL88LXZNT38H3BN/image-asset.png?format=100w 100w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280271292-MWFNLRL88LXZNT38H3BN/image-asset.png?format=300w 300w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280271292-MWFNLRL88LXZNT38H3BN/image-asset.png?format=500w 500w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280271292-MWFNLRL88LXZNT38H3BN/image-asset.png?format=750w 750w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280271292-MWFNLRL88LXZNT38H3BN/image-asset.png?format=1000w 1000w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280271292-MWFNLRL88LXZNT38H3BN/image-asset.png?format=1500w 1500w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548280271292-MWFNLRL88LXZNT38H3BN/image-asset.png?format=2500w 2500w" loading="lazy" decoding="async" data-loader="sqs">
+
+            </div>
+          </div>
+        
+          
+        
+
+        
+      
+        </figure>
+      
+
+    </div>
+  
+
+
+  
+
+
+</div></div></div><div class="col sqs-col-3 span-3"><div class="sqs-block image-block sqs-block-image" data-aspect-ratio="102.67857142857142" data-block-type="5" id="block-yui_3_17_2_1_1548279753874_21110"><div class="sqs-block-content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+    
+  
+    <div
+        class="
+          image-block-outer-wrapper
+          layout-caption-hidden
+          design-layout-inline
+          combination-animation-none
+          individual-animation-none
+          individual-text-animation-none
+        "
+        data-test="image-block-inline-outer-wrapper"
+    >
+
+      
+
+      
+        <figure
+            class="
+              sqs-block-image-figure
+              intrinsic
+            "
+            style="max-width:347px;"
+        >
+          
+        
+        
+
+        
+          
+            
+          <div
+              
+              
+              class="image-block-wrapper"
+              data-animation-role="image"
+              
+  
+
+          >
+            <div class="sqs-image-shape-container-element
+              
+          
+        
+              has-aspect-ratio
+            " style="
+                position: relative;
+                
+                  padding-bottom:102.67857360839844%;
+                
+                overflow: hidden;-webkit-mask-image: -webkit-radial-gradient(white, black);
+              "
+              >
+                
+                
+                
+                
+                
+                
+                
+                <img data-stretch="false" data-src="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281403898-0ZTK14KYD6Z4A4W3A0TC/USBureauofIndianAffairs.jpg" data-image="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281403898-0ZTK14KYD6Z4A4W3A0TC/USBureauofIndianAffairs.jpg" data-image-dimensions="347x145" data-image-focal-point="0.5,0.5" alt="USBureauofIndianAffairs.jpg" data-load="false" elementtiming="system-image-block" src="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281403898-0ZTK14KYD6Z4A4W3A0TC/USBureauofIndianAffairs.jpg" width="347" height="145" alt="" sizes="(max-width: 640px) 100vw, (max-width: 767px) 25vw, 25vw" style="display:block;object-fit: cover; width: 100%; height: 100%; object-position: 50% 50%" onload="this.classList.add(&quot;loaded&quot;)" srcset="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281403898-0ZTK14KYD6Z4A4W3A0TC/USBureauofIndianAffairs.jpg?format=100w 100w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281403898-0ZTK14KYD6Z4A4W3A0TC/USBureauofIndianAffairs.jpg?format=300w 300w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281403898-0ZTK14KYD6Z4A4W3A0TC/USBureauofIndianAffairs.jpg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281403898-0ZTK14KYD6Z4A4W3A0TC/USBureauofIndianAffairs.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281403898-0ZTK14KYD6Z4A4W3A0TC/USBureauofIndianAffairs.jpg?format=1000w 1000w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281403898-0ZTK14KYD6Z4A4W3A0TC/USBureauofIndianAffairs.jpg?format=1500w 1500w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281403898-0ZTK14KYD6Z4A4W3A0TC/USBureauofIndianAffairs.jpg?format=2500w 2500w" loading="lazy" decoding="async" data-loader="sqs">
+
+            </div>
+          </div>
+        
+          
+        
+
+        
+      
+        </figure>
+      
+
+    </div>
+  
+
+
+  
+
+
+</div></div></div></div><div class="row sqs-row"><div class="col sqs-col-3 span-3"><div class="sqs-block image-block sqs-block-image" data-aspect-ratio="75" data-block-type="5" id="block-yui_3_17_2_1_1548279753874_23587"><div class="sqs-block-content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+    
+  
+    <div
+        class="
+          image-block-outer-wrapper
+          layout-caption-hidden
+          design-layout-inline
+          combination-animation-none
+          individual-animation-none
+          individual-text-animation-none
+        "
+        data-test="image-block-inline-outer-wrapper"
+    >
+
+      
+
+      
+        <figure
+            class="
+              sqs-block-image-figure
+              intrinsic
+            "
+            style="max-width:1224px;"
+        >
+          
+        
+        
+
+        
+          
+            
+          <div
+              
+              
+              class="image-block-wrapper"
+              data-animation-role="image"
+              
+  
+
+          >
+            <div class="sqs-image-shape-container-element
+              
+          
+        
+              has-aspect-ratio
+            " style="
+                position: relative;
+                
+                  padding-bottom:75%;
+                
+                overflow: hidden;-webkit-mask-image: -webkit-radial-gradient(white, black);
+              "
+              >
+                
+                
+                
+                
+                
+                
+                
+                <img data-stretch="false" data-src="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281748303-R5OAW7RU1JCXKFEJ3RUW/1224px-US-ArmyCorpsOfEngineers-Logo.svg.png" data-image="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281748303-R5OAW7RU1JCXKFEJ3RUW/1224px-US-ArmyCorpsOfEngineers-Logo.svg.png" data-image-dimensions="1224x938" data-image-focal-point="0.5,0.5" alt="1224px-US-ArmyCorpsOfEngineers-Logo.svg.png" data-load="false" elementtiming="system-image-block" src="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281748303-R5OAW7RU1JCXKFEJ3RUW/1224px-US-ArmyCorpsOfEngineers-Logo.svg.png" width="1224" height="938" alt="" sizes="(max-width: 640px) 100vw, (max-width: 767px) 25vw, 25vw" style="display:block;object-fit: cover; width: 100%; height: 100%; object-position: 50% 50%" onload="this.classList.add(&quot;loaded&quot;)" srcset="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281748303-R5OAW7RU1JCXKFEJ3RUW/1224px-US-ArmyCorpsOfEngineers-Logo.svg.png?format=100w 100w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281748303-R5OAW7RU1JCXKFEJ3RUW/1224px-US-ArmyCorpsOfEngineers-Logo.svg.png?format=300w 300w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281748303-R5OAW7RU1JCXKFEJ3RUW/1224px-US-ArmyCorpsOfEngineers-Logo.svg.png?format=500w 500w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281748303-R5OAW7RU1JCXKFEJ3RUW/1224px-US-ArmyCorpsOfEngineers-Logo.svg.png?format=750w 750w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281748303-R5OAW7RU1JCXKFEJ3RUW/1224px-US-ArmyCorpsOfEngineers-Logo.svg.png?format=1000w 1000w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281748303-R5OAW7RU1JCXKFEJ3RUW/1224px-US-ArmyCorpsOfEngineers-Logo.svg.png?format=1500w 1500w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281748303-R5OAW7RU1JCXKFEJ3RUW/1224px-US-ArmyCorpsOfEngineers-Logo.svg.png?format=2500w 2500w" loading="lazy" decoding="async" data-loader="sqs">
+
+            </div>
+          </div>
+        
+          
+        
+
+        
+      
+        </figure>
+      
+
+    </div>
+  
+
+
+  
+
+
+</div></div></div><div class="col sqs-col-3 span-3"><div class="sqs-block image-block sqs-block-image" data-block-type="5" id="block-yui_3_17_2_1_1548279753874_25975"><div class="sqs-block-content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+    
+  
+    <div
+        class="
+          image-block-outer-wrapper
+          layout-caption-hidden
+          design-layout-inline
+          combination-animation-none
+          individual-animation-none
+          individual-text-animation-none
+        "
+        data-test="image-block-inline-outer-wrapper"
+    >
+
+      
+
+      
+        <figure
+            class="
+              sqs-block-image-figure
+              intrinsic
+            "
+            style="max-width:569px;"
+        >
+          
+        
+        
+
+        
+          
+            
+          <div
+              
+              
+              class="image-block-wrapper"
+              data-animation-role="image"
+              
+  
+
+          >
+            <div class="sqs-image-shape-container-element
+              
+          
+        
+              has-aspect-ratio
+            " style="
+                position: relative;
+                
+                  padding-bottom:119.15641784667969%;
+                
+                overflow: hidden;-webkit-mask-image: -webkit-radial-gradient(white, black);
+              "
+              >
+                
+                
+                
+                
+                
+                
+                
+                <img data-stretch="false" data-src="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281900313-SV0341QEW3CUIQ0MA1JO/National-Park-Service-logo.png" data-image="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281900313-SV0341QEW3CUIQ0MA1JO/National-Park-Service-logo.png" data-image-dimensions="569x678" data-image-focal-point="0.5,0.5" alt="National-Park-Service-logo.png" data-load="false" elementtiming="system-image-block" src="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281900313-SV0341QEW3CUIQ0MA1JO/National-Park-Service-logo.png" width="569" height="678" alt="" sizes="(max-width: 640px) 100vw, (max-width: 767px) 25vw, 25vw" style="display:block;object-fit: cover; width: 100%; height: 100%; object-position: 50% 50%" onload="this.classList.add(&quot;loaded&quot;)" srcset="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281900313-SV0341QEW3CUIQ0MA1JO/National-Park-Service-logo.png?format=100w 100w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281900313-SV0341QEW3CUIQ0MA1JO/National-Park-Service-logo.png?format=300w 300w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281900313-SV0341QEW3CUIQ0MA1JO/National-Park-Service-logo.png?format=500w 500w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281900313-SV0341QEW3CUIQ0MA1JO/National-Park-Service-logo.png?format=750w 750w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281900313-SV0341QEW3CUIQ0MA1JO/National-Park-Service-logo.png?format=1000w 1000w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281900313-SV0341QEW3CUIQ0MA1JO/National-Park-Service-logo.png?format=1500w 1500w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281900313-SV0341QEW3CUIQ0MA1JO/National-Park-Service-logo.png?format=2500w 2500w" loading="lazy" decoding="async" data-loader="sqs">
+
+            </div>
+          </div>
+        
+          
+        
+
+        
+      
+        </figure>
+      
+
+    </div>
+  
+
+
+  
+
+
+</div></div></div><div class="col sqs-col-3 span-3"><div class="sqs-block image-block sqs-block-image" data-block-type="5" id="block-yui_3_17_2_1_1548279753874_28388"><div class="sqs-block-content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+    
+  
+    <div
+        class="
+          image-block-outer-wrapper
+          layout-caption-hidden
+          design-layout-inline
+          combination-animation-none
+          individual-animation-none
+          individual-text-animation-none
+        "
+        data-test="image-block-inline-outer-wrapper"
+    >
+
+      
+
+      
+        <figure
+            class="
+              sqs-block-image-figure
+              intrinsic
+            "
+            style="max-width:160px;"
+        >
+          
+        
+        
+
+        
+          
+            
+          <div
+              
+              
+              class="image-block-wrapper"
+              data-animation-role="image"
+              
+  
+
+          >
+            <div class="sqs-image-shape-container-element
+              
+          
+        
+              has-aspect-ratio
+            " style="
+                position: relative;
+                
+                  padding-bottom:109.375%;
+                
+                overflow: hidden;-webkit-mask-image: -webkit-radial-gradient(white, black);
+              "
+              >
+                
+                
+                
+                
+                
+                
+                
+                <img data-stretch="false" data-src="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281855631-124ZKL12FC6KVV0FGZHD/download.jpeg" data-image="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281855631-124ZKL12FC6KVV0FGZHD/download.jpeg" data-image-dimensions="160x175" data-image-focal-point="0.5,0.5" alt="download.jpeg" data-load="false" elementtiming="system-image-block" src="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281855631-124ZKL12FC6KVV0FGZHD/download.jpeg" width="160" height="175" alt="" sizes="(max-width: 640px) 100vw, (max-width: 767px) 25vw, 25vw" style="display:block;object-fit: cover; width: 100%; height: 100%; object-position: 50% 50%" onload="this.classList.add(&quot;loaded&quot;)" srcset="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281855631-124ZKL12FC6KVV0FGZHD/download.jpeg?format=100w 100w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281855631-124ZKL12FC6KVV0FGZHD/download.jpeg?format=300w 300w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281855631-124ZKL12FC6KVV0FGZHD/download.jpeg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281855631-124ZKL12FC6KVV0FGZHD/download.jpeg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281855631-124ZKL12FC6KVV0FGZHD/download.jpeg?format=1000w 1000w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281855631-124ZKL12FC6KVV0FGZHD/download.jpeg?format=1500w 1500w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281855631-124ZKL12FC6KVV0FGZHD/download.jpeg?format=2500w 2500w" loading="lazy" decoding="async" data-loader="sqs">
+
+            </div>
+          </div>
+        
+          
+        
+
+        
+      
+        </figure>
+      
+
+    </div>
+  
+
+
+  
+
+
+</div></div></div><div class="col sqs-col-3 span-3"><div class="sqs-block image-block sqs-block-image" data-block-type="5" id="block-yui_3_17_2_1_1548279753874_30838"><div class="sqs-block-content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+    
+  
+    <div
+        class="
+          image-block-outer-wrapper
+          layout-caption-hidden
+          design-layout-inline
+          combination-animation-none
+          individual-animation-none
+          individual-text-animation-none
+        "
+        data-test="image-block-inline-outer-wrapper"
+    >
+
+      
+
+      
+        <figure
+            class="
+              sqs-block-image-figure
+              intrinsic
+            "
+            style="max-width:225px;"
+        >
+          
+        
+        
+
+        
+          
+            
+          <div
+              
+              
+              class="image-block-wrapper"
+              data-animation-role="image"
+              
+  
+
+          >
+            <div class="sqs-image-shape-container-element
+              
+          
+        
+              has-aspect-ratio
+            " style="
+                position: relative;
+                
+                  padding-bottom:100%;
+                
+                overflow: hidden;-webkit-mask-image: -webkit-radial-gradient(white, black);
+              "
+              >
+                
+                
+                
+                
+                
+                
+                
+                <img data-stretch="false" data-src="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281937129-NINUYR3TXQBHKW3G8CHT/image-asset.jpeg" data-image="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281937129-NINUYR3TXQBHKW3G8CHT/image-asset.jpeg" data-image-dimensions="225x225" data-image-focal-point="0.5,0.5" alt="" data-load="false" elementtiming="system-image-block" src="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281937129-NINUYR3TXQBHKW3G8CHT/image-asset.jpeg" width="225" height="225" alt="" sizes="(max-width: 640px) 100vw, (max-width: 767px) 25vw, 25vw" style="display:block;object-fit: cover; width: 100%; height: 100%; object-position: 50% 50%" onload="this.classList.add(&quot;loaded&quot;)" srcset="https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281937129-NINUYR3TXQBHKW3G8CHT/image-asset.jpeg?format=100w 100w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281937129-NINUYR3TXQBHKW3G8CHT/image-asset.jpeg?format=300w 300w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281937129-NINUYR3TXQBHKW3G8CHT/image-asset.jpeg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281937129-NINUYR3TXQBHKW3G8CHT/image-asset.jpeg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281937129-NINUYR3TXQBHKW3G8CHT/image-asset.jpeg?format=1000w 1000w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281937129-NINUYR3TXQBHKW3G8CHT/image-asset.jpeg?format=1500w 1500w, https://images.squarespace-cdn.com/content/v1/5a6a4170017db274345ef30b/1548281937129-NINUYR3TXQBHKW3G8CHT/image-asset.jpeg?format=2500w 2500w" loading="lazy" decoding="async" data-loader="sqs">
+
+            </div>
+          </div>
+        
+          
+        
+
+        
+      
+        </figure>
+      
+
+    </div>
+  
+
+
+  
+
+
+</div></div></div></div></div></div></div>
+								</div>
+
+								<div id="page-body-footer" class="extra-wrapper">
+									<div class="sqs-layout sqs-grid-12 columns-12 empty" data-layout-label="Services Footer Content" data-type="block-field" id="page-footer-5c48a1164d7a9ca636369e34"><div class="row sqs-row"><div class="col sqs-col-12 span-12"></div></div></div>
+								</div>
+
+							</div>
+						</div> <!-- content-wrapper -->
+
+						<div id="sidebar-one-wrapper" class="vertical-navigation-bar-wrapper">
+							<div id="sidebar-one" class="vertical-navigation-bar">
+								
+<nav id="main-navigation" class="main-nav" data-content-field="navigation">
+  <ul>
+  
+
+    
+
+    <li class="page-collection"><a href="/">Home</a><span class="delimiter">/</span></li>
+  
+
+    
+
+    <li class="page-collection active-link"><a href="/new-page">Services</a><span class="delimiter">/</span></li>
+  
+
+    
+
+    <li aria-haspopup="true" class="folder-collection folder"><a href="#" onClick="return false;">Projects</a><span class="delimiter">/</span><div class="subnav"><ul><li class="page-collection"><a href="/heatlhcare">Heatlhcare</a></li><li class="page-collection"><a href="/under-construction">Under Construction</a></li></ul></div></li>
+  
+
+    
+
+    <li class="page-collection"><a href="/contact-info">Contact Info</a><span class="delimiter">/</span></li>
+  
+     
+  </ul>
+</nav>
+
+
+								
+								<div class="site-info">
+									<h3 class="site-title">Bexar Advanced Solutions Group</h3>
+							    <div data-content-field="site-description" class="site-description"><p>Contracting services to support our Nation's Veterans</p></div>
+							  </div>
+							  
+								<div class="sqs-layout sqs-grid-1 columns-1 empty" data-layout-label="Sidebar One Content" data-type="block-field" data-updated-on="1548282110477" id="sidebar-one-blocks"><div class="row sqs-row"><div class="col sqs-col-1 span-1"></div></div></div>
+							</div>
+						</div><!-- sidebar-one-wrapper -->
+
+					<div class="clearer" id="body-clearer"></div>
+
+		      </div>
+		    </div> <!-- page-body-wrapper -->
+		    <div id="page-footer-wrapper">
+		      <div id="page-footer">
+		        
+		          
+		        
+		        <div class="sqs-layout sqs-grid-12 columns-12" data-layout-label="Footer Content" data-type="block-field" data-updated-on="1548280650548" id="footer-blocks"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_1_1548280484180_1610"><div class="sqs-block-content">
+
+<div class="sqs-html-content">
+  <p style="white-space: pre-wrap;">Copyright © 2019 BeXar-Advanced Solutions Group, LLC. All rights reserved</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div></div></div></div>
+		      </div>
+		    </div><!-- page-footer-wrapper -->
+
+
+		  </div>
+		</div> <!-- canvas-wrapper -->
+
+		
+
+	</body>
 </html>
