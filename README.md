@@ -25,7 +25,7 @@ A flexible Node.js platform that integrates multiple AI models including ChatGPT
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/ENKI-420/123/
 cd multi-model-ai-platform
 ```
 
